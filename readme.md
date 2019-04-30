@@ -30,10 +30,17 @@ Optical flow works on several assumptions:
 
 Our problem fits for optical flow assumptions such that while a car moving forward, the road lines around the car and the passing cars provide good information for estimating car speed.   
 
-![img1]("https://github.com/butroy/speed_estimation/blob/master/plots/img1.png)
-![img2]("https://github.com/butroy/speed_estimation/blob/master/plots/img2.png)
-![flow]("https://github.com/butroy/speed_estimation/blob/master/plots/flow.png)
+<p align="center">
+ <img src= "https://github.com/butroy/speed_estimation/blob/master/plots/img1.png" width = "240" height= "100" />
+</p>
 
+<p align="center">
+ <img src= "https://github.com/butroy/speed_estimation/blob/master/plots/img2.png"  width = "240" height= "100"/>
+</p>
+
+<p align="center">
+ <img src= "https://github.com/butroy/speed_estimation/blob/master/plots/flow.png"  width = "240" height= "100"/>
+</p>
 
 Above set of images is a sample of two consecutive frames and their optical flow output. I crop out the sky and the engine cover parts of input frames since those parts mostly don't change and don't have too much information and will also waste computing resource in neural network training stage. As we can see in the optical flow image, the road lines' and the nearby cars' movements are recorded and we could use these information to train a CNN to estimate car speed. 
 
