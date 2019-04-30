@@ -2,7 +2,7 @@
 
 ### Introduction  
 
-In this project, I estimated vehicle speed from a car dash cam. After research, I found that to tackle this problem, using optical flow analysis and convolutional neural network is a optimal choice. In this report. I would show how I realize a excellent result step by step.
+In this project, I estimated vehicle speed from a car dash cam. After research, I found that to tackle this problem, using optical flow analysis and convolutional neural network is an optimal choice. In this report. I would show how I realize the result step by step.
 
 ### Data exploration
 The data set includes two videos, one for train and one for test. Both of videos are shot at 20fps and speed of car at each frame in train video is also provided. 
