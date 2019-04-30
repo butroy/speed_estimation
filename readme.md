@@ -10,13 +10,13 @@ The data set includes two videos, one for train and one for test. Both of videos
 First, I decode the video into pictures. Below is a sample frame of the video.
 
 <p align="center">
- <img src= "https://github.com/butroy/movie-autoencoder/blob/master/plots/act_func_test.png" />
+ <img src= "https://github.com/butroy/speed_estimation/blob/master/plots/sample.jpg"/>
 </p>
 
 The track of speed in train video is
 
 <p align="center">
- <img src= "https://github.com/butroy/movie-autoencoder/blob/master/plots/act_func_test.png" />
+ <img src= "https://github.com/butroy/speed_estimation/blob/master/plots/speed%20track.png" />
 </p>
 
 
@@ -31,15 +31,15 @@ Optical flow works on several assumptions:
 Our problem fits for optical flow assumptions such that while a car moving forward, the road lines around the car and the passing cars provide good information for estimating car speed.   
 
 <p align="center">
- <img src= "https://github.com/butroy/movie-autoencoder/blob/master/plots/act_func_test.png" />
+ <img src= "https://github.com/butroy/speed_estimation/blob/master/plots/img1.png" />
 </p>
 
 <p align="center">
- <img src= "https://github.com/butroy/movie-autoencoder/blob/master/plots/act_func_test.png" />
+ <img src= "https://github.com/butroy/speed_estimation/blob/master/plots/img2.png" />
 </p>
 
 <p align="center">
- <img src= "https://github.com/butroy/movie-autoencoder/blob/master/plots/act_func_test.png" />
+ <img src= "https://github.com/butroy/speed_estimation/blob/master/plots/flow.png" />
 </p>
 
 Above set of images is a sample of two consecutive frames and their optical flow output. I crop out the sky and the engine cover parts of input frames since those parts mostly don't change and don't have too much information and will also waste computing resource in neural network training stage. As we can see in the optical flow image, the road lines' and the nearby cars' movements are recorded and we could use these information to train a CNN to estimate car speed. 
@@ -51,7 +51,7 @@ To be specific, I used two consecutive images to generate a optical flow image, 
 I use the Keras API to create the neural network structure and I used an end to end learning stucture from [Nvidia](https://arxiv.org/pdf/1604.07316v1.pdf)
 
 <p align="center">
- <img src= "https://github.com/butroy/movie-autoencoder/blob/master/plots/act_func_test.png" />
+ <img src= "https://github.com/butroy/speed_estimation/blob/master/plots/Nvidia_struc.jpg" />
 </p>
 
 Before training, I shuffled the data randomly and choose 0.7/0.2/0.1 as train/valid/test ratio. I also use batch generator to generate images as need to save memory. 
@@ -61,7 +61,7 @@ Before training, I shuffled the data randomly and choose 0.7/0.2/0.1 as train/va
 
 
 <p align="center">
- <img src= "https://github.com/butroy/movie-autoencoder/blob/master/plots/act_func_test.png" />
+ <img src= "https://github.com/butroy/speed_estimation/blob/master/plots/loss.png" />
 </p>
 
 The mse loss for train/valid/test are 0.5432/0.9480/0.9 
